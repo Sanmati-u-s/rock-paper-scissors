@@ -22,29 +22,41 @@ function converToWord(letter){
 }
 
 function win(userChoice, computerChoice){
-    userScore++;
-    userScore_span.innerHTML = userScore;
-    computerScore_span.innerHTML = computerScore;
     const smallUserWord = "user".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
+    const userChoice_div = document.getElementById(usercChoice);
+    computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${converToWord(userChoice)}${smallUserWord} beats ${converToWord(computerChoice)}${smallCompWord} you WON!🌟`;
-    document.getElementById(userChoice).classList.add('.green-glow);')
+    userChoice_div.classList.add('green-glow');
+    setTimeout(function() { userChoice_div.classList.remove('green-glow') }, 300);
+
 }
 
+
+
 function lose(userChoice, computerChoice){
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    const userChoice_div = document.getElementById(userChoice);
     computerScore++;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    const smallUserWord = "user".fontsize(3).sub();
-    const smallCompWord = "comp".fontsize(3).sub();
     result_p.innerHTML = `${converToWord(userChoice)}${smallUserWord} loses to  ${converToWord(computerChoice)}${smallCompWord} you LOST 😔`;
     computerScore_span.innerHTML = computerScore;
+    userChoice_div.classList.add('red-glow');
+    setTimeout(function() { userChoice_div.classList.remove('red-glow') }, 300);
+
 }
 
 function draw(userChoice, computerChoice){
+    const userChoice_div = document.getElementById(userChoice);
+    const smallUserWord = "user".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    result_p.innerHTML = `${converToWord(userChoice)} matches ${converToWord(computerChoice)} it's a DRAW 🐱`;
+    result_p.innerHTML = `${converToWord(userChoice)}${smallUserWord} matches ${converToWord(computerChoice)}${smallCompWord} it's a DRAW 🐱`;
+    userChoice_div.classList.add('blue-glow');
+    setTimeout(function() { userChoice_div.classList.remove('blue-glow') }, 300);
 }
 
 function game(userChoice){
