@@ -24,11 +24,13 @@ function converToWord(letter){
 function win(userChoice, computerChoice){
     const smallUserWord = "user".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
-    const userChoice_div = document.getElementById(usercChoice);
+    const userChoice_div = document.getElementById(userChoice);
+    userScore++;
+    userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${converToWord(userChoice)}${smallUserWord} beats ${converToWord(computerChoice)}${smallCompWord} you WON!🌟`;
     userChoice_div.classList.add('green-glow');
-    setTimeout(function() { userChoice_div.classList.remove('green-glow') }, 300);
+    setTimeout(function() { userChoice_div.classList.remove('green-glow') }, 5000);
 
 }
 
