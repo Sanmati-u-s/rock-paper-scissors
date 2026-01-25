@@ -105,8 +105,8 @@ img:hover {
 }
 
 .green-glow {
-    border: 4px solid #4dcc7d;
-    box-shadow: 0 0 10px #31b43a;
+    border: 5px solid #4dcc7d;
+    box-shadow: 0 0 20px #31b43a;
     border-radius: 50%;
 }
 
@@ -115,24 +115,24 @@ img:hover {
 }
 
 .red-glow {
-    border: 4px solid #fc121b;
-    box-shadow: 0 0 10px #d01115;
+    border: 5px solid #fc121b;
+    box-shadow: 0 0 20px #d01115;
     border-radius: 50%;
 
 }
 
 .red-glow img {
-    animation: zoom 0.5s ease-in-out;
+    animation: zoom 0.3s ease-in-out;
 }
 
 .blue-glow {
-    border: 4px solid #54a1f4;
-    box-shadow: 0 0 10px #2963d7;
+    border: 5px solid #54a1f4;
+    box-shadow: 0 0 20px #2963d7;
     border-radius: 50%;
 }
 
 .blue-glow img {
-    animation: zoom 0.5s ease-in-out;
+    animation: zoom 0.3s ease-in-out;
 }
 
 @keyframes zoom {
@@ -143,6 +143,6 @@ img:hover {
     }
 
     50% {
-        transform: scale(1.06);
+        transform: scale(1.05);
     }
 }
