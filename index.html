@@ -1,39 +1,89 @@
 <!DOCTYPE html lang="en">
 <html>
-    <head>
-        <title>rock-paper-scissors</title>
-        <link rel="stylesheet" href="styles.css">
-        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 
-    </head>
-    <body>
-        <header>
-            <h1>Rock Paper Scissors</h1>
-        </header>
+<head>
+    <title>rock-paper-scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
 
-        <div class="score-board">
-            <div id="user-label" class="badge">user</div>
-            <div id="comp-label" class="badge">comp</div>
-            <span id="user-score">0</span>:<span id="comp-score">0 </span>
+</head>
+
+<body>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+        <div class="target-badge">First to 10 points wins!</div>
+    </header>
+
+    <div class="score-board">
+        <div id="user-label" class="badge">user</div>
+        <div id="comp-label" class="badge">comp</div>
+        <span id="user-score">0</span>:<span id="comp-score">0 </span>
+    </div>
+
+    <div class="result">
+        <p>Waiting for the user to play ...</p>
+    </div>
+
+    <div class="choices">
+        <div id="r" class="choice">
+            <img src="./assets/rock.png" alt="rock">
         </div>
-
-        <div class="result">
-            <p>Waiting for the user to play ...</p>
+        <div id="p" class="choice">
+            <img src="./assets/paper.png" alt="paper">
         </div>
+        <div id="s" class="choice">
+            <img src="./assets/scissors.png" alt="scissors">
+        </div>
+    </div>
 
-        <div class="choices">
-            <div id="r" class="choice">
-                <img src="./assets/rock.png" alt="rock">
+    <p id="action-message">Make Your Move! </p>
+
+    <!-- Game Over Modal Overlay -->
+    <div id="game-over-modal" class="modal-overlay hidden" role="dialog" aria-modal="true"
+        aria-labelledby="modal-status">
+        <div id="modal-card" class="modal-card">
+            <div id="modal-icon" class="modal-icon">🏆</div>
+            <h2 id="modal-title" class="modal-title">Match Finished</h2>
+            <p id="modal-status" class="modal-status">You won the game!</p>
+            <p id="modal-subtext" class="modal-subtext">First player to reach 10 points wins the match.</p>
+
+            <div class="modal-score-summary">
+                <div class="summary-box user-box">
+                    <span class="summary-label">USER</span>
+                    <span id="final-user-score" class="summary-value">10</span>
+                </div>
+                <div class="summary-divider">:</div>
+                <div class="summary-box comp-box">
+                    <span class="summary-label">COMP</span>
+                    <span id="final-comp-score" class="summary-value">0</span>
+                </div>
             </div>
-            <div id="p" class="choice">
-                <img src="./assets/paper.png" alt="paper">
-            </div>
-            <div id="s" class="choice">
-                <img src="./assets/scissors.png" alt="scissors">
+
+            <div class="modal-actions">
+                <button id="replay-btn" class="btn btn-replay" type="button" title="Start a new game">
+                    <span class="btn-icon">🔄</span> Replay Game
+                </button>
+                <button id="exit-btn" class="btn btn-exit" type="button" title="Exit the game">
+                    <span class="btn-icon">✕</span> Exit Game
+                </button>
             </div>
         </div>
+    </div>
 
-        <p id="action-message">Make Your Move! </p>
-        <script src="app.js" charset="utf-8"></script>
-    </body>
+    <!-- Exit Screen Overlay -->
+    <div id="exit-screen" class="exit-screen hidden" role="dialog" aria-modal="true">
+        <div class="exit-card">
+            <div class="exit-icon">👋</div>
+            <h2 class="exit-title">Game Closed</h2>
+            <p class="exit-text">That was fun!</p>
+            <p class="exit-subtext">You can now safely close this browser window or tab.</p>
+            <button id="exit-restart-btn" class="btn btn-replay" type="button">
+                <span class="btn-icon">🔄</span> Play Again
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js" charset="utf-8"></script>
+</body>
+
 </html>
